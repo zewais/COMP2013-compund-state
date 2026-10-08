@@ -7,7 +7,13 @@ export default function ProductCard({
   img,
   quantity,
 }: fruit) {
-  const [productInfo, setProductInfo] = useState({
+  //You can add an interface for compound states to ensure type inference.
+  interface productInfo {
+    quantity: number;
+    price: number;
+  }
+
+  const [productInfo, setProductInfo] = useState<productInfo>({
     quantity,
     price: priceOptions[0],
   });
